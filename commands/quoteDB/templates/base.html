@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Rabscuttle's Quote Index</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="static/template.css">
+    <link rel="icon" href="static/recyclebin.gif" type="image/gif">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://code.highcharts.com/stock/highstock.js"></script>
+
+    <link href="static/footable/footable.core.css" rel="stylesheet" type="text/css" />
+    <script src="static/footable/footable.js" type="text/javascript"></script>
+    <script src="static/footable/footable.paginate.js" type="text/javascript"></script>
+    <script src="static/footable/footable.filter.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.footable').footable();
+        });
+    </script>
+    <script src="static/theme.js?v={{randint}}"></script>
+    {% for item in js %}<script src="js/{{item}}?v={{randint}}" type="text/javascript"></script>
+    {% endfor %}
+</head>
+<body>
+    <p>Rabscuttle likes to store all your quotes you throw at him. The operating syntax is as following:</p>
+    <pre>+quote &lt;index number&gt;</pre>
+    <p>The list of quotes is as following:</p>
+    
+    <div class="table">
+        <table class="footable" data-page-size="20" data-filter="#filter"1337s1>
+            <thead>
+                <tr>
+                    <th data-toggle="true">No.</th>
+                    <th >Quote <input type="text" value="search" name="search" id="filter" onblur="if (this.value == '') {this.value = 'search';}" onfocus="if (this.value == 'search') {this.value = '';}" /></th>
+                    <th >submitted by</th>
+                    <th >on date</th>
+                </tr>
+            </thead>
+            <tbody>
+        {% for line in quotes | sort(reverse=true) %}<tr>
+                    <td class="small">{{line[0]+1}}</td>
+                    <td>{{line[1]}}</td> 
+                    <td class="small">{{line[2]}}</td> 
+                    <td class="small">{{line[3].strftime('%d. %B %Y')}}</td> 
+                </tr>{% endfor %}
+            </tbody>
+            <tfoot class="hide-if-no-paging">
+                <tr>
+                    <td colspan="15" class="text-center">
+                        <ul class="pagination pagination-centered"></ul>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <div class="graphs">
+        <div id="container01" class="container"> </div>
+        <div id="container02" class="container"> </div>
+        <div id="container03" class="container"> </div>
+    </div>
+    <div class="footer">
+        <p>Powered by <a href="http://github.com/SinZ163">SinZ</a> | Template by <a href="http://github.com/DarkMio">DarkMio</a></p>
+    </div>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="static/slick/slick.min.js"></script>
+    <script type="text/javascript" src="static/slick.js"></script>
+</body>
+</html>
