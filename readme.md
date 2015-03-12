@@ -31,7 +31,7 @@ Previews links - either with a special handler or by just retrieving the website
 A markov chain process - using the bible or moby dick.
 
 #### Quote
-A plugin that lets you submit quotes - even renders nice websites! (Example)[http://moddota.com/rabscuttle/]
+A plugin that lets you submit quotes - even renders nice websites! [Example](http://moddota.com/rabscuttle/)
 
 #### Say
 Send a message through your bot - to confuse people or other shenanigans.
