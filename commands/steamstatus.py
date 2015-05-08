@@ -29,7 +29,7 @@ def execute(self, name, params, channel, userdata, rank):
         'cm-SG': 'Singapore', 'cm-US': 'United States', 'cm-NL':'Netherlands',
         'cm-EU':'Europe', 'cm-CN':'China', 'cm-AU':'Australia', 'steam':'Steam',
         'store':'Store', 'community':'Community', 'webapi':'Web API',
-        'online':'Online', 'dota2':'Dota2 CG', 'tf2':'TF2 CG', 'csgo':'CSGO CG',
+        'online':'Online', 'dota2':'Dota2 GC', 'tf2':'TF2 GC', 'csgo':'CSGO GC',
         'dota_mm_average':'Average Wait Time', 'dota_mm_regions':'Online Regions',
         'dota_mm_searching':'Players Searching'}
     
